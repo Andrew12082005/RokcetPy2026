@@ -1,2 +1,4 @@
-/log/*.txt
+log/*.txt
+log/*.png
+log/*.pdf
 *.kml
