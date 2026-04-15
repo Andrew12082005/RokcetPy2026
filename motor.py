@@ -1,14 +1,14 @@
 from rocketpy import SolidMotor
 
 MQ90 = SolidMotor(
-    thrust_source="src/MQ_90_V0.3.1.eng",\
+    thrust_source="src/MQ_90V_0.4.eng",
     coordinate_system_orientation="nozzle_to_combustion_chamber",
     burn_time=4.69,
-    dry_mass=4,
-    dry_inertia=(0.01, 0.01, 0.01),
-    grain_separation=0.01,
-    center_of_dry_mass_position=0.35,
-    grains_center_of_mass_position=0.35,
+    dry_mass=7.2,
+    dry_inertia=(0.52974, 0.52974, 0.02048),
+    grain_separation=0.001,
+    center_of_dry_mass_position=0.36087,
+    grains_center_of_mass_position=0.423,
     grain_number=4,
     grain_density=1750.0,
     grain_outer_radius=0.0475,
@@ -19,4 +19,4 @@ MQ90 = SolidMotor(
     nozzle_position=0
     )
 
-MQ90.draw()
+#MQ90.draw()

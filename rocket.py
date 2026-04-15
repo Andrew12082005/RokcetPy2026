@@ -2,18 +2,18 @@ from rocketpy import Rocket, Tail
 from motor import MQ90 
 
 
-r = Rocket(
+JRI = Rocket(
     radius=0.0615,
-    mass=10.0,
+    mass=8.44,
     inertia=(1.0, 1.0, 0.1),
-    power_off_drag="src/drag_curve.csv",
-    power_on_drag="src/drag_curve.csv",
-    center_of_mass_without_motor=0.88,
+    power_off_drag="src/powerOffDragCurve.csv",
+    power_on_drag="src/powerOnDragCurve.csv",
+    center_of_mass_without_motor=0.888,
     coordinate_system_orientation="nose_to_tail"
 )
 
     # 添加鼻錐
-r.add_nose(
+JRI.add_nose(
     length=0.684,
     kind="vonKarman",
     base_radius=0.057,
@@ -21,23 +21,31 @@ r.add_nose(
 )
 
     # 添加尾部
-r.add_tail(
+JRI.add_tail(
     top_radius=0.057,
     bottom_radius=0.0615,
     length=0.06,
-    position=1.252
+    position=1.29
 )
 
+JRI.add_tail(
+    top_radius=0.0615,
+    bottom_radius=0.052,
+    length=0.05,
+    position=2.15
+    )
+
     # 添加尾翼
-r.add_trapezoidal_fins(
+JRI.add_trapezoidal_fins(
     n=4,
     root_chord=0.132,
     tip_chord=0.0689,
-    span=0.102,
-    position=1.96
+    span=0.108,
+    position=2.02,
+    sweep_angle=38.5
 )
 
     # 添加引擎（從參數傳入）
-r.add_motor(MQ90, position=2.15)
-r.draw()
+JRI .add_motor(MQ90, position=2.15)
+#r.draw()
 
